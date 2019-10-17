@@ -26,7 +26,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="79K-nx-uae" kind="presentation" identifier="InstructionsSegue" id="HeZ-PW-I8O"/>
+                                            <segue destination="79K-nx-uae" kind="show" identifier="InstructionsSegue" id="HeZ-PW-I8O"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UF9-8t-gtv">
@@ -93,6 +93,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="nEc-kO-GyZ" kind="show" identifier="EditPillFromListSegue" id="enE-Uz-Gdc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -100,7 +103,13 @@
                             <outlet property="delegate" destination="5c3-sb-F6n" id="IkL-Wj-P2h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pill List" id="4w4-bt-CLl"/>
+                    <navigationItem key="navigationItem" title="Pill List" id="4w4-bt-CLl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KWI-sG-Yaj">
+                            <connections>
+                                <segue destination="nEc-kO-GyZ" kind="show" identifier="AddPillFromListSegue" id="fOy-Hv-sM5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJe-dn-PsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -146,12 +155,27 @@
             <objects>
                 <viewController id="79K-nx-uae" customClass="InstructionsViewController" customModule="Pill_Pal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="to0-A7-agW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Mind blowing instructions go here." translatesAutoresizingMaskIntoConstraints="NO" id="SQS-l6-rJc">
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SQS-l6-rJc" firstAttribute="leading" secondItem="1pZ-v6-bPn" secondAttribute="leading" constant="20" id="244-RJ-I89"/>
+                            <constraint firstItem="1pZ-v6-bPn" firstAttribute="trailing" secondItem="SQS-l6-rJc" secondAttribute="trailing" constant="20" id="98D-bs-nC6"/>
+                            <constraint firstItem="1pZ-v6-bPn" firstAttribute="bottom" secondItem="SQS-l6-rJc" secondAttribute="bottom" constant="20" id="BsO-rz-snS"/>
+                            <constraint firstItem="SQS-l6-rJc" firstAttribute="top" secondItem="1pZ-v6-bPn" secondAttribute="top" constant="20" id="j6Y-XC-NCj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1pZ-v6-bPn"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Instructions" id="abu-Iq-Fm8"/>
+                    <navigationItem key="navigationItem" title="Instructions" largeTitleDisplayMode="always" id="abu-Iq-Fm8"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJu-gp-jyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -177,4 +201,7 @@
             <point key="canvasLocation" x="131.8840579710145" y="89.732142857142847"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fOy-Hv-sM5"/>
+    </inferredMetricsTieBreakers>
 </document>

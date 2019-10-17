@@ -20,6 +20,7 @@
 		BA5B339423574B23005882AC /* PillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339323574B23005882AC /* PillsTableViewCell.swift */; };
 		BA5B339623574B63005882AC /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339523574B63005882AC /* Pill.swift */; };
 		BA5B339823574BC3005882AC /* Pill Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339723574BC3005882AC /* Pill Model.swift */; };
+		BA5B339D23580FC1005882AC /* FrequencyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339C23580FC1005882AC /* FrequencyPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BA5B339323574B23005882AC /* PillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsTableViewCell.swift; sourceTree = "<group>"; };
 		BA5B339523574B63005882AC /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
 		BA5B339723574BC3005882AC /* Pill Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pill Model.swift"; sourceTree = "<group>"; };
+		BA5B339C23580FC1005882AC /* FrequencyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				BA5B339523574B63005882AC /* Pill.swift */,
 				BA5B339723574BC3005882AC /* Pill Model.swift */,
 				BA5B339323574B23005882AC /* PillsTableViewCell.swift */,
+				BA5B339C23580FC1005882AC /* FrequencyPickerView.swift */,
 			);
 			name = Details;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				BA5B339023574AE6005882AC /* AddEditViewController.swift in Sources */,
 				BA5B339823574BC3005882AC /* Pill Model.swift in Sources */,
 				BA5B339423574B23005882AC /* PillsTableViewCell.swift in Sources */,
+				BA5B339D23580FC1005882AC /* FrequencyPickerView.swift in Sources */,
 				BA5B3375235748B4005882AC /* AppDelegate.swift in Sources */,
 				BA5B3377235748B4005882AC /* SceneDelegate.swift in Sources */,
 				BA5B339623574B63005882AC /* Pill.swift in Sources */,

@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="89.732142857142847"/>
+            <point key="canvasLocation" x="865" y="-684"/>
         </scene>
         <!--Pill List-->
         <scene sceneID="uUM-0v-6HT">
@@ -114,7 +114,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJe-dn-PsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1883" y="498"/>
+            <point key="canvasLocation" x="896" y="90"/>
         </scene>
         <!--Print Pill List-->
         <scene sceneID="u8G-Rz-fDb">
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Nd-oH-dYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2770" y="865"/>
+            <point key="canvasLocation" x="896" y="817"/>
         </scene>
         <!--Add/Edit Pills-->
         <scene sceneID="r3j-5D-SuS">
@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Et-th-Fpg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728" y="90"/>
+            <point key="canvasLocation" x="1913" y="90"/>
         </scene>
         <!--Instructions-->
         <scene sceneID="C6A-Dg-X4Z">
@@ -175,12 +175,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1pZ-v6-bPn"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Instructions" largeTitleDisplayMode="always" id="abu-Iq-Fm8"/>
+                    <navigationItem key="navigationItem" title="Instructions" id="abu-Iq-Fm8"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJu-gp-jyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1883" y="-430"/>
+            <point key="canvasLocation" x="1914" y="-684"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="y5k-MD-GmH">
@@ -198,10 +198,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWJ-Mf-ZVN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="89.732142857142847"/>
+            <point key="canvasLocation" x="16" y="-684"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fOy-Hv-sM5"/>
+        <segue reference="enE-Uz-Gdc"/>
     </inferredMetricsTieBreakers>
 </document>

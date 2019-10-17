@@ -130,7 +130,46 @@
                     <view key="view" contentMode="scaleToFill" id="M8X-3n-vrY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="ZhG-aY-nq5">
+                                <rect key="frame" x="20" y="108" width="374" height="305.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o3m-rb-xGg">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="244.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSU-7k-Smg">
+                                                <rect key="frame" x="0.0" y="0.0" width="61.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a70-fp-GTm">
+                                                <rect key="frame" x="0.0" y="28.5" width="320" height="216"/>
+                                            </pickerView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="89" translatesAutoresizingMaskIntoConstraints="NO" id="edS-FO-NhN">
+                                        <rect key="frame" x="0.0" y="275.5" width="343" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6B-5W-xZa">
+                                                <rect key="frame" x="0.0" y="0.0" width="132" height="30"/>
+                                                <state key="normal" title="Print Simplified List"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r6-LV-1b6">
+                                                <rect key="frame" x="221" y="0.0" width="122" height="30"/>
+                                                <state key="normal" title="Print Detailed List"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yyd-ro-NgX" firstAttribute="trailing" secondItem="ZhG-aY-nq5" secondAttribute="trailing" constant="20" id="7e1-jW-7H6"/>
+                            <constraint firstItem="ZhG-aY-nq5" firstAttribute="leading" secondItem="yyd-ro-NgX" secondAttribute="leading" constant="20" id="AH0-jX-Sua"/>
+                            <constraint firstItem="ZhG-aY-nq5" firstAttribute="top" secondItem="yyd-ro-NgX" secondAttribute="top" constant="20" id="ko0-iy-55T"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yyd-ro-NgX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Print Pill List" id="3xM-nd-fQ9"/>
@@ -138,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Nd-oH-dYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896" y="817"/>
+            <point key="canvasLocation" x="895.6521739130435" y="816.96428571428567"/>
         </scene>
         <!--Add/Edit Pills-->
         <scene sceneID="r3j-5D-SuS">

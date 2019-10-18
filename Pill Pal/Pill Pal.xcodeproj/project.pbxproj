@@ -19,7 +19,7 @@
 		BA5B339223574B03005882AC /* PrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339123574B03005882AC /* PrintViewController.swift */; };
 		BA5B339423574B23005882AC /* PillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339323574B23005882AC /* PillsTableViewCell.swift */; };
 		BA5B339623574B63005882AC /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339523574B63005882AC /* Pill.swift */; };
-		BA5B339823574BC3005882AC /* Pill Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339723574BC3005882AC /* Pill Model.swift */; };
+		BA5B339823574BC3005882AC /* PillModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339723574BC3005882AC /* PillModelController.swift */; };
 		BA5B339D23580FC1005882AC /* FrequencyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339C23580FC1005882AC /* FrequencyPickerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,7 @@
 		BA5B339123574B03005882AC /* PrintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintViewController.swift; sourceTree = "<group>"; };
 		BA5B339323574B23005882AC /* PillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsTableViewCell.swift; sourceTree = "<group>"; };
 		BA5B339523574B63005882AC /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
-		BA5B339723574BC3005882AC /* Pill Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pill Model.swift"; sourceTree = "<group>"; };
+		BA5B339723574BC3005882AC /* PillModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillModelController.swift; sourceTree = "<group>"; };
 		BA5B339C23580FC1005882AC /* FrequencyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				BA5B339523574B63005882AC /* Pill.swift */,
-				BA5B339723574BC3005882AC /* Pill Model.swift */,
+				BA5B339723574BC3005882AC /* PillModelController.swift */,
 				BA5B339323574B23005882AC /* PillsTableViewCell.swift */,
 				BA5B339C23580FC1005882AC /* FrequencyPickerView.swift */,
 			);
@@ -197,7 +197,7 @@
 				BA5B339223574B03005882AC /* PrintViewController.swift in Sources */,
 				BA5B338E23574AC3005882AC /* PillListTableViewController.swift in Sources */,
 				BA5B339023574AE6005882AC /* AddEditViewController.swift in Sources */,
-				BA5B339823574BC3005882AC /* Pill Model.swift in Sources */,
+				BA5B339823574BC3005882AC /* PillModelController.swift in Sources */,
 				BA5B339423574B23005882AC /* PillsTableViewCell.swift in Sources */,
 				BA5B339D23580FC1005882AC /* FrequencyPickerView.swift in Sources */,
 				BA5B3375235748B4005882AC /* AppDelegate.swift in Sources */,
@@ -349,6 +349,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3T6D6ZWY97;
 				INFOPLIST_FILE = "Pill Pal/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -366,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3T6D6ZWY97;
 				INFOPLIST_FILE = "Pill Pal/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

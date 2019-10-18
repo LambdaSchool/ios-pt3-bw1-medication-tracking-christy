@@ -7,3 +7,18 @@
 //
 
 import Foundation
+struct Pill {
+    var name: String
+    var isPrescription: Bool
+    var numberOfPills: UInt
+    var dosage: UInt
+    var dosageType: String
+    var frequency: Frequency
+}
+
+enum Frequency: String {
+    case monthly
+    case weekly
+    case daily
+    case twiceDaily = "2x/day"
+}

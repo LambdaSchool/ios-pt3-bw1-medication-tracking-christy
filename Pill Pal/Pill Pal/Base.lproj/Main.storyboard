@@ -72,6 +72,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="gKf-sN-nV9"/>
+                    <connections>
+                        <outlet property="addPillsButton" destination="UF9-8t-gtv" id="G4j-tH-k34"/>
+                        <outlet property="instructionsButtton" destination="4m3-eY-HN4" id="YEk-X0-TDH"/>
+                        <outlet property="nextPillButton" destination="naZ-nC-E9T" id="xmE-zN-9id"/>
+                        <outlet property="viewPillsButton" destination="zcL-jn-Ivr" id="HuL-vj-uCt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -318,6 +324,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="enE-Uz-Gdc"/>
+        <segue reference="LZh-j0-TUy"/>
     </inferredMetricsTieBreakers>
 </document>

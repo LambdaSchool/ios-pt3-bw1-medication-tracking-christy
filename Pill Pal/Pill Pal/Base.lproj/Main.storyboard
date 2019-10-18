@@ -215,6 +215,9 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XRb-V6-tfJ">
                                                         <rect key="frame" x="130.5" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="isPrescriptionToggled:" destination="nEc-kO-GyZ" eventType="valueChanged" id="nsd-el-o3d"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -265,8 +268,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gj9-Pe-0ld"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add/Edit Pills" id="jM8-hM-Siu"/>
+                    <navigationItem key="navigationItem" title="Add/Edit Pills" id="jM8-hM-Siu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JgA-jR-udq">
+                            <connections>
+                                <action selector="saveAction:" destination="nEc-kO-GyZ" id="IEn-5f-MSe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="dosageTextField" destination="qLO-cW-TBR" id="srf-os-l53"/>
+                        <outlet property="dosageTypeTextField" destination="cng-ix-Az1" id="THh-4q-P6k"/>
+                        <outlet property="frequencyPicked" destination="jKt-E6-SbB" id="Gsk-dJ-JHf"/>
+                        <outlet property="frequencyPickerView" destination="jKt-E6-SbB" id="6YH-tG-XZ7"/>
+                        <outlet property="isPrescriptionSwitch" destination="XRb-V6-tfJ" id="210-xv-64z"/>
+                        <outlet property="nameTextField" destination="KBc-jj-Kmg" id="ykI-Uu-AAM"/>
+                        <outlet property="numberOfPillsTextField" destination="XHN-AI-fb7" id="cDK-bL-S3g"/>
+                        <outlet property="saveBarButton" destination="JgA-jR-udq" id="wtF-nl-B7r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Et-th-Fpg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

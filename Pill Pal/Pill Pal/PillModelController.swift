@@ -1,5 +1,5 @@
 //
-//  Pill Model.swift
+//  Pill Model Controller.swift
 //  Pill Pal
 //
 //  Created by Christy Hicks on 10/16/19.

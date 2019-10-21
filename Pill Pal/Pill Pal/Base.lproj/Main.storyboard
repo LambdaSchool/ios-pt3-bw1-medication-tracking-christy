@@ -37,7 +37,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="nEc-kO-GyZ" kind="show" identifier="AddPillsFromMenuSegue" id="LZh-j0-TUy"/>
+                                            <segue destination="nEc-kO-GyZ" kind="show" identifier="AddFromMenuSegue" id="c7M-Oe-ZeN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcL-jn-Ivr">
@@ -73,8 +73,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="gKf-sN-nV9"/>
                     <connections>
-                        <outlet property="addPillsButton" destination="UF9-8t-gtv" id="G4j-tH-k34"/>
-                        <outlet property="instructionsButtton" destination="4m3-eY-HN4" id="YEk-X0-TDH"/>
+                        <outlet property="addPillsButton" destination="UF9-8t-gtv" id="3rj-ep-ye9"/>
+                        <outlet property="instructionsButton" destination="4m3-eY-HN4" id="YEk-X0-TDH"/>
                         <outlet property="nextPillButton" destination="naZ-nC-E9T" id="xmE-zN-9id"/>
                         <outlet property="viewPillsButton" destination="zcL-jn-Ivr" id="HuL-vj-uCt"/>
                     </connections>
@@ -279,9 +279,8 @@
                     <connections>
                         <outlet property="dosageTextField" destination="qLO-cW-TBR" id="srf-os-l53"/>
                         <outlet property="dosageTypeTextField" destination="cng-ix-Az1" id="THh-4q-P6k"/>
-                        <outlet property="frequencyPicked" destination="jKt-E6-SbB" id="Gsk-dJ-JHf"/>
-                        <outlet property="frequencyPickerView" destination="jKt-E6-SbB" id="6YH-tG-XZ7"/>
-                        <outlet property="isPrescriptionSwitch" destination="XRb-V6-tfJ" id="210-xv-64z"/>
+                        <outlet property="frequencyPickerView" destination="jKt-E6-SbB" id="oVX-8p-San"/>
+                        <outlet property="isPrescriptionSwitch" destination="XRb-V6-tfJ" id="0UE-Oz-ClR"/>
                         <outlet property="nameTextField" destination="KBc-jj-Kmg" id="ykI-Uu-AAM"/>
                         <outlet property="numberOfPillsTextField" destination="XHN-AI-fb7" id="cDK-bL-S3g"/>
                         <outlet property="saveBarButton" destination="JgA-jR-udq" id="wtF-nl-B7r"/>
@@ -343,6 +342,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LZh-j0-TUy"/>
+        <segue reference="enE-Uz-Gdc"/>
     </inferredMetricsTieBreakers>
 </document>

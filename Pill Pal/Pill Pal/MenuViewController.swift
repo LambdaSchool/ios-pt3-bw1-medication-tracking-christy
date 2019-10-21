@@ -11,7 +11,7 @@ import UIKit
 class MenuViewController: UIViewController {
 // MARK: - Outlets
     
-    @IBOutlet weak var instructionsButtton: UIButton!
+    @IBOutlet weak var instructionsButton: UIButton!
     @IBOutlet weak var addPillsButton: UIButton!
     @IBOutlet weak var viewPillsButton: UIButton!
     @IBOutlet weak var nextPillButton: UIButton!
@@ -20,8 +20,8 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        instructionsButtton.layer.cornerRadius = 69
-        instructionsButtton.clipsToBounds = true
+        instructionsButton.layer.cornerRadius = 69
+        instructionsButton.clipsToBounds = true
         addPillsButton.layer.cornerRadius = 69
         addPillsButton.clipsToBounds = true
         viewPillsButton.layer.cornerRadius = 69

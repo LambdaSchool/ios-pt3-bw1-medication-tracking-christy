@@ -20,14 +20,19 @@ class AddEditViewController: UIViewController {
     @IBOutlet weak var frequencyPickerView: FrequencyPickerView!
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
     
+    
+    // MARK: - Properties
     var pickerData: [String] = [String]()
     
+    // MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.frequencyPickerView.delegate = self
         self.frequencyPickerView.dataSource = self
+        
         pickerData = ["monthly", "weekly", "daily", "twice daily"]
-        // Do any additional setup after loading the view.
+       
     }
     
     // MARK: - Actions
@@ -48,6 +53,7 @@ class AddEditViewController: UIViewController {
 
 }
 
+// MARK: - Picker View Delegate and Data Source
 extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1

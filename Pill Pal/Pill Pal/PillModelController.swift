@@ -17,6 +17,7 @@ class PillModelController {
     private var pills: [Pill] = []
     
     // Set up an alphabetical array of all the prescription pills.
+    // FIXME: Perhaps change to be sorted by frequency?
     var prescriptionPills: [Pill] {
         let filter = pills
             .filter { $0.isPrescription }
@@ -59,7 +60,7 @@ class PillModelController {
          let decoder = PropertyListDecoder()
          
          do {
-             let pillsData =  try Data(contentsOf: url)
+             let pillsData = try Data(contentsOf: url)
              let decodedPills = try decoder.decode([Pill].self, from: pillsData)
              pills = decodedPills
          } catch {
@@ -81,19 +82,30 @@ class PillModelController {
              saveToPersistentStore()
          }
      }
-}
-     /*
+     
      // Method to update pill
-     func updatePill(for pill: Pill) { // Add more initializers
+     func updatePill(for pill: Pill, newName: String?, newQuantity: UInt?, newDosage: UInt?, newDosageType: String?, isPrescription: Bool, newFrequency: Frequency) {
          guard let pillIndex = pills.firstIndex(of: pill) else { return }
-         var updatedPill = pill
-         if let newPillName = newName {
-             updatedPill.name = newPillName
-         }
-         // Add other properties
-         }
-         pills[pillIndex] = updatedPill
-         saveToPersistentStore()
+            var updatedPill = pill
+         
+            if let newPillName = newName {
+                updatedPill.name = newPillName
+            }
+            if let newPillQuantity = newQuantity {
+                updatedPill.numberOfPills = newPillQuantity
+            }
+            if let newPillDosage = newDosage {
+                updatedPill.dosage = newPillDosage
+            }
+            if let newPillDosageType = newDosageType {
+                updatedPill.dosageType = newPillDosageType
+            }
+                updatedPill.isPrescription = isPrescription
+                updatedPill.frequency = newFrequency
+        
+            pills[pillIndex] = updatedPill
+            saveToPersistentStore()
      }
- }
- */
+}
+ 
+ 

@@ -92,7 +92,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PillCell" rowHeight="110" id="lo4-1V-43Y">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PillCell" rowHeight="110" id="lo4-1V-43Y" customClass="PillsTableViewCell" customModule="Pill_Pal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lo4-1V-43Y" id="XqO-o5-h8L">
@@ -159,6 +159,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dosageLabel" destination="Rrw-AT-7py" id="bfM-jy-b4h"/>
+                                    <outlet property="dosageTypeLabel" destination="BOw-Wf-kuv" id="Hju-jf-C6P"/>
+                                    <outlet property="frequencyLabel" destination="a09-1V-H9a" id="gSQ-1D-qgi"/>
+                                    <outlet property="nameLabel" destination="cYD-fa-bDc" id="cgr-Fp-GCr"/>
+                                    <outlet property="nextPillAtLabel" destination="6if-N1-mXA" id="jiJ-xY-lWF"/>
+                                    <outlet property="quantityLabel" destination="y3Y-0s-4MW" id="rEn-58-daj"/>
                                     <segue destination="nEc-kO-GyZ" kind="show" identifier="EditPillFromListSegue" id="enE-Uz-Gdc"/>
                                 </connections>
                             </tableViewCell>

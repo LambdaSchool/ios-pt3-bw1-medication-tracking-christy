@@ -20,14 +20,21 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        instructionsButton.layer.cornerRadius = 69
         instructionsButton.clipsToBounds = true
-        addPillsButton.layer.cornerRadius = 69
         addPillsButton.clipsToBounds = true
-        viewPillsButton.layer.cornerRadius = 69
         viewPillsButton.clipsToBounds = true
-        nextPillButton.layer.cornerRadius = 69
         nextPillButton.clipsToBounds = true
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        let instructionHeight = instructionsButton.bounds.height
+        
+        instructionsButton.layer.cornerRadius = instructionHeight/2.0
+        addPillsButton.layer.cornerRadius = addPillsButton.bounds.height/2.0
+        viewPillsButton.layer.cornerRadius = viewPillsButton.bounds.height/2.0
+        nextPillButton.layer.cornerRadius = nextPillButton.bounds.height/2.0
     }
     
     /*

@@ -31,13 +31,13 @@ class PillModelController {
             .sorted { $0.name < $1.name }
         return filter
     }
-     
+     // FIXME: - Correct plist name
      // Create location for saving data
      private var pillListURL: URL? {
          let fileManager = FileManager.default
          guard let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first
          else { return nil }
-             return documents.appendingPathComponent("ReadingList.plist")
+            return documents.appendingPathComponent("Info.plist")
          }
      
      // Method for saving data
@@ -63,7 +63,7 @@ class PillModelController {
              let decodedPills = try decoder.decode([Pill].self, from: pillsData)
              pills = decodedPills
          } catch {
-             print("Error loading book list: \(error)")
+             print("Error loading pill list: \(error)")
          }
      }
      

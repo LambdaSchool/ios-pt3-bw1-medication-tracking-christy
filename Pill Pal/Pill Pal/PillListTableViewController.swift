@@ -26,26 +26,26 @@ class PillListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    // let pillModelController = PillModelController()
+    let pillModelController = PillModelController()
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-/*
+
      override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
          
          if section == 0 {
              
-             return pillModelController.prescriptions.count == 0 ? "" : "Prescriptions"
+             return pillModelController.prescriptionPills.count == 0 ? "" : "Prescriptions"
              
          } else if section == 1 {
              
-             return pillModelController.supplements.count == 0 ? "" : "Supplements"
+             return pillModelController.supplementPills.count == 0 ? "" : "Supplements"
          }
          
          return nil
      }
-*/
+
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pillsFor(section: section).count
@@ -112,9 +112,9 @@ class PillListTableViewController: UITableViewController {
 extension PillListTableViewController {
     func pillsFor(section: Int) -> [Pill] {
         if section == 0 {
-            // return pillModelController.prescriptions
+            return pillModelController.prescriptionPills
         } else if section == 1 {
-           // return pillModelController.supplements
+           return pillModelController.supplementPills
         }
         return []
     }

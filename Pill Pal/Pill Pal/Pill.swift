@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct Pill {
+struct Pill: Codable, Equatable {
     var name: String
     var isPrescription: Bool
     var numberOfPills: UInt
@@ -16,9 +16,11 @@ struct Pill {
     var frequency: Frequency
 }
 
-enum Frequency: String {
+enum Frequency: String, Codable {
     case monthly
     case weekly
     case daily
     case twiceDaily = "2x/day"
 }
+
+

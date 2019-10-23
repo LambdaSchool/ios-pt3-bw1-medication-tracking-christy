@@ -8,8 +8,12 @@
 
 import UIKit
 
-class PillListTableViewController: UITableViewController {
+let demoPill: Pill = Pill(name: "Health Improver", isPrescription: true, numberOfPills: 1, dosage: 100, dosageType: "mg", frequency: .daily)
 
+class PillListTableViewController: UITableViewController {
+    
+    var pillList: [Pill?] = [demoPill]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,26 +26,42 @@ class PillListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    // let pillModelController = PillModelController()
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
-
+/*
+     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+         
+         if section == 0 {
+             
+             return pillModelController.prescriptions.count == 0 ? "" : "Prescriptions"
+             
+         } else if section == 1 {
+             
+             return pillModelController.supplements.count == 0 ? "" : "Supplements"
+         }
+         
+         return nil
+     }
+*/
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return pillsFor(section: section).count
+        
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PillCell", for: indexPath)
+            guard let pillCell = cell as? PillsTableViewCell else { fatalError("Did not find cell") }
+        
+        // pillCell.delegate = self
+        pillCell.pill = pillsFor(section: indexPath.section)[indexPath.row]
 
-        // Configure the cell...
-
-        return cell
+        return pillCell
     }
-    */
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -88,3 +108,15 @@ class PillListTableViewController: UITableViewController {
     */
 
 }
+
+extension PillListTableViewController {
+    func pillsFor(section: Int) -> [Pill] {
+        if section == 0 {
+            // return pillModelController.prescriptions
+        } else if section == 1 {
+           // return pillModelController.supplements
+        }
+        return []
+    }
+}
+

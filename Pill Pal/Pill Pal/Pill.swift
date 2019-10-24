@@ -24,7 +24,7 @@ enum Frequency: String, Codable, CaseIterable {
     case monthly = "Monthly"
     
     static var frequencies: [Frequency] {
-    return [.twiceDaily, .daily, .weekly, .monthly]
+        return [.twiceDaily, .daily, .weekly, .monthly]
     }
     
 

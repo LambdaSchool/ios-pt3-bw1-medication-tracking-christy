@@ -8,11 +8,11 @@
 
 import UIKit
 
-let demoPill: Pill = Pill(name: "Health Improver", isPrescription: true, numberOfPills: 1, dosage: 100, dosageType: "mg", frequency: .daily)
+//let demoPill: Pill = Pill(name: "Health Improver", isPrescription: true, numberOfPills: 1, dosage: 100, dosageType: "mg", frequency: .daily)
 
 class PillListTableViewController: UITableViewController {
     
-    var pillList: [Pill] = [demoPill]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,9 +113,10 @@ class PillListTableViewController: UITableViewController {
             
             vc.pillModelController = pillModelController
             
-            /* case "printPillSegue":
+        case "printPillSegue":
             guard let vc = segue.destination as? PrintViewController else { return }
-            */
+            print("Still need to configure the Print VC")
+            
         default:
             fatalError("Could not find segue")
              

@@ -28,6 +28,7 @@ class PillsTableViewCell: UITableViewCell {
     // MARK: - View
     func updateViews() {
         guard let pill = pill else { return }
+        
         // Convert UInt values to Strings
         let quantityString = String(pill.numberOfPills)
         let dosageString = String(pill.dosage)
@@ -40,11 +41,11 @@ class PillsTableViewCell: UITableViewCell {
         frequencyLabel.text = pill.frequency.rawValue
        // nextPillAtLabel.text =  // Need to configure timers before I can complete this
     }
-
+/*
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-
+*/
 }

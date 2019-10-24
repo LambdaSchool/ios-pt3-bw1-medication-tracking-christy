@@ -12,7 +12,7 @@ let demoPill: Pill = Pill(name: "Health Improver", isPrescription: true, numberO
 
 class PillListTableViewController: UITableViewController {
     
-    var pillList: [Pill?] = [demoPill]
+    var pillList: [Pill] = [demoPill]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,13 +53,12 @@ class PillListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PillCell", for: indexPath)
-            guard let pillCell = cell as? PillsTableViewCell else { fatalError("Did not find cell") }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PillCell", for: indexPath) as? PillsTableViewCell else { fatalError("Did not find cell") }
         
-        // pillCell.delegate = self
-        pillCell.pill = pillsFor(section: indexPath.section)[indexPath.row]
+        // pillCell.delegate = self  // No delegate yet
+        cell.pill = pillsFor(section: indexPath.section)[indexPath.row]
 
-        return pillCell
+        return cell
     }
     
     /*
@@ -97,15 +96,50 @@ class PillListTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "editPillFromListSegue":
+            guard let vc = segue.destination as? AddEditViewController,
+                let cell = sender as? PillsTableViewCell else { return }
+                    
+                    vc.pillModelController = pillModelController
+                    vc.pill = cell.pill
+        
+        case "addPillFromListSegue":
+            guard let vc = segue.destination as? AddEditViewController else { return }
+            
+            vc.pillModelController = pillModelController
+            
+            /* case "printPillSegue":
+            guard let vc = segue.destination as? PrintViewController else { return }
+            */
+        default:
+            fatalError("Could not find segue")
+             
+        }
+        /*
+         if segue.identifier == "addBookSegue" {
+                     guard let vc = segue.destination as? BookDetailViewController else { return }
+                     
+                     vc.bookController = bookController
+                     
+             } else if segue.identifier == "showBookSegue" {
+                     
+                     guard let vc = segue.destination as? BookDetailViewController,
+                         
+                     let cell = sender as? BookTableViewCell else { return }
+             
+                     vc.bookController = bookController
+                     vc.book = cell.book
+                     
+             }
+         }         */
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
 

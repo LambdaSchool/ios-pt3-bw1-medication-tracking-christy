@@ -39,8 +39,61 @@ class AddEditViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func isPrescriptionToggled(_ sender: UISwitch) {
+        
     }
+    
     @IBAction func saveAction(_ sender: UIBarButtonItem) {
+        guard pill != nil else {
+            if nameTextField.text == "" || numberOfPillsTextField.text == "" {
+                navigationController?.popToRootViewController(animated: true)
+                return
+            
+            } else {
+                
+                let pillNumber = UInt(numberOfPillsTextField.text ?? "1")!
+                let dosageNumber = UInt(dosageTextField.text ?? "0")
+                let frequencyType = Frequency(rawValue: frequencyPickerView.textInputContextIdentifier ?? "daily")
+                
+                pillModelController.create(pill: Pill(name: nameTextField.text!, isPrescription: isPrescriptionSwitch.isOn, numberOfPills: pillNumber, dosage: dosageNumber, dosageType: dosageTypeTextField.text, frequency: frequencyType!))
+                
+                navigationController?.popToRootViewController(animated: true)
+                
+                return
+
+            }
+            // FIXME: - Will never be executed
+            let pillNumber = UInt(numberOfPillsTextField.text ?? "1")!
+            let dosageNumber = UInt(dosageTextField.text ?? "0")
+            let frequencyType = Frequency(rawValue: frequencyPickerView.textInputContextIdentifier ?? "daily")
+            
+            pillModelController.updatePill(for: pill!, newName: nameTextField.text, newQuantity: pillNumber, newDosage: dosageNumber, newDosageType: dosageTypeTextField.text, isPrescription: isPrescriptionSwitch.isOn, newFrequency: frequencyType!)
+            
+            navigationController?.popToRootViewController(animated: true)
+            
+        }
+        /*
+         guard book != nil else {
+             if bookTitleTextField.text == "" || bookReasonsTextView.text == "" {
+                 navigationController?.popToRootViewController(animated: true)
+                 return
+             } else {
+             let title = bookTitleTextField.text!
+             let reason = bookReasonsTextView.text!
+             
+             bookController.create(book: Book(title: title, reasonToRead: reason))
+             
+             navigationController?.popToRootViewController(animated: true)
+             
+             return
+             }
+         }
+         
+         let title = bookTitleTextField.text
+         let reason = bookReasonsTextView.text
+         
+         bookController.updateBookText(for: book!, newTitle: title, newReason: reason)
+         
+         navigationController?.popToRootViewController(animated: true)         */
     }
   
     /*

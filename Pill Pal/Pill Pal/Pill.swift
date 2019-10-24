@@ -11,16 +11,17 @@ struct Pill: Codable, Equatable {
     var name: String
     var isPrescription: Bool
     var numberOfPills: UInt
-    var dosage: UInt
-    var dosageType: String
+    var dosage: UInt?
+    var dosageType: String?
     var frequency: Frequency
 }
 
 enum Frequency: String, Codable {
-    case monthly
-    case weekly
+    case twiceDaily = "twice daily"
     case daily
-    case twiceDaily = "2x/day"
+    case weekly
+    case monthly
+    
 }
 
 

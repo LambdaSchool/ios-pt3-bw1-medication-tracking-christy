@@ -23,6 +23,8 @@ class AddEditViewController: UIViewController {
     
     // MARK: - Properties
     var pickerData: [String] = [String]()
+    var pillModelController = PillModelController()
+    var pill: Pill?
     
     // MARK: - View
     override func viewDidLoad() {
@@ -31,7 +33,7 @@ class AddEditViewController: UIViewController {
         self.frequencyPickerView.delegate = self
         self.frequencyPickerView.dataSource = self
         
-        pickerData = ["monthly", "weekly", "daily", "twice daily"]
+        pickerData = ["twice daily", "daily", "weeky", "monthly"]
        
     }
     

@@ -165,7 +165,7 @@
                                     <outlet property="nameLabel" destination="cYD-fa-bDc" id="cgr-Fp-GCr"/>
                                     <outlet property="nextPillAtLabel" destination="6if-N1-mXA" id="jiJ-xY-lWF"/>
                                     <outlet property="quantityLabel" destination="y3Y-0s-4MW" id="rEn-58-daj"/>
-                                    <segue destination="nEc-kO-GyZ" kind="show" identifier="EditPillFromListSegue" id="enE-Uz-Gdc"/>
+                                    <segue destination="nEc-kO-GyZ" kind="show" identifier="editPillFromListSegue" id="enE-Uz-Gdc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -178,12 +178,12 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="KWI-sG-Yaj">
                                 <connections>
-                                    <segue destination="nEc-kO-GyZ" kind="show" identifier="AddPillFromListSegue" id="fOy-Hv-sM5"/>
+                                    <segue destination="nEc-kO-GyZ" kind="show" identifier="addPillFromListSegue" id="fOy-Hv-sM5"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Print" id="hfo-mg-kO1">
                                 <connections>
-                                    <segue destination="DtA-x3-9bM" kind="show" id="st8-WE-zJn"/>
+                                    <segue destination="DtA-x3-9bM" kind="show" identifier="printPillSegue" id="st8-WE-zJn"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>

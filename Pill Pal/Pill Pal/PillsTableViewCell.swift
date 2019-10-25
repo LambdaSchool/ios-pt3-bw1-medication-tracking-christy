@@ -31,20 +31,20 @@ class PillsTableViewCell: UITableViewCell {
         
         // Convert UInt values to Strings
         let quantityString = String(pill.numberOfPills)
-
-       if pill.dosage != nil {
+        
+        if pill.dosage != nil {
             let dosageString = String(pill.dosage!)
             dosageLabel.text = dosageString
         }
-
+        
         
         // Assign pill values to labels
         nameLabel.text = pill.name
         quantityLabel.text = quantityString
-
+        
         dosageTypeLabel.text = pill.dosageType
         frequencyLabel.text = pill.frequency.rawValue
-       // nextPillAtLabel.text =  // Need to configure timers before I can complete this
+        // nextPillAtLabel.text =  // Need to configure timers before I can complete this
     }
 /*
     override func setSelected(_ selected: Bool, animated: Bool) {

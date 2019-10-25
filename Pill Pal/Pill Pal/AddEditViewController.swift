@@ -32,7 +32,7 @@ class AddEditViewController: UIViewController {
         
         self.frequencyPickerView.delegate = self
         self.frequencyPickerView.dataSource = self
-        
+        updateViews()
         pickerData = ["twice daily", "daily", "weeky", "monthly"]
        
     }
@@ -52,7 +52,7 @@ class AddEditViewController: UIViewController {
                 
                 let pillNumber = UInt(numberOfPillsTextField.text ?? "1")!
                 let dosageNumber = UInt(dosageTextField.text ?? "0")
-                let frequencyType = Frequency(rawValue: frequencyPickerView.textInputContextIdentifier ?? "daily")
+               let frequencyType = Frequency(rawValue: frequencyPickerView.textInputContextIdentifier ?? "daily")
                 
                 pillModelController.create(pill: Pill(name: nameTextField.text!, isPrescription: isPrescriptionSwitch.isOn, numberOfPills: pillNumber, dosage: dosageNumber, dosageType: dosageTypeTextField.text, frequency: frequencyType!))
                 
@@ -71,29 +71,24 @@ class AddEditViewController: UIViewController {
             
         
     }
-        /*
-         guard book != nil else {
-             if bookTitleTextField.text == "" || bookReasonsTextView.text == "" {
-                 navigationController?.popToRootViewController(animated: true)
-                 return
-             } else {
-             let title = bookTitleTextField.text!
-             let reason = bookReasonsTextView.text!
-             
-             bookController.create(book: Book(title: title, reasonToRead: reason))
-             
-             navigationController?.popToRootViewController(animated: true)
-             
-             return
-             }
-         }
-         
-         let title = bookTitleTextField.text
-         let reason = bookReasonsTextView.text
-         
-         bookController.updateBookText(for: book!, newTitle: title, newReason: reason)
-         
-         navigationController?.popToRootViewController(animated: true)         */
+    
+    func updateViews() {
+        if let pill = pill {
+        nameTextField.text = pill.name
+        numberOfPillsTextField.text = String(pill.numberOfPills)
+        dosageTypeTextField.text = pill.dosageType
+        isPrescriptionSwitch.isOn = pill.isPrescription
+          //  let frequency = Frequency.frequencies[row]
+         //   frequencyPickerView.selectRow(pill.frequency , inComponent: <#T##Int#>, animated: false)
+            
+        if pill.dosage != nil {
+            let dosageString = String(pill.dosage!)
+            dosageTypeTextField.text = dosageString
+        }
+            
+    }
+    }
+    
     }
   
     /*

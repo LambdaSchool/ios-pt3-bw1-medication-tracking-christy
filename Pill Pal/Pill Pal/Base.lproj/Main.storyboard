@@ -182,6 +182,7 @@
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Print" id="hfo-mg-kO1">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="DtA-x3-9bM" kind="show" identifier="printPillSegue" id="st8-WE-zJn"/>
                                 </connections>

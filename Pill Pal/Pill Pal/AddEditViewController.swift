@@ -59,9 +59,8 @@ class AddEditViewController: UIViewController {
                 navigationController?.popToRootViewController(animated: true)
                 
                 return
-
             }
-            // FIXME: - Will never be executed
+        }
             let pillNumber = UInt(numberOfPillsTextField.text ?? "1")!
             let dosageNumber = UInt(dosageTextField.text ?? "0")
             let frequencyType = Frequency(rawValue: frequencyPickerView.textInputContextIdentifier ?? "daily")
@@ -70,7 +69,8 @@ class AddEditViewController: UIViewController {
             
             navigationController?.popToRootViewController(animated: true)
             
-        }
+        
+    }
         /*
          guard book != nil else {
              if bookTitleTextField.text == "" || bookReasonsTextView.text == "" {
@@ -106,7 +106,7 @@ class AddEditViewController: UIViewController {
     }
     */
 
-}
+
 
 // MARK: - Picker View Delegate and Data Source
 extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {

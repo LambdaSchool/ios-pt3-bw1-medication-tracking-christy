@@ -36,8 +36,6 @@ class AddEditViewController: UIViewController {
         self.frequencyPickerView.dataSource = self
 
         updateViews()
-     //  pickerData = ["twice daily", "daily", "weeky", "monthly"]
-
        
     }
     

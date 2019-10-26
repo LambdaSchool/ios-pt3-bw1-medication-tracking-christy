@@ -22,7 +22,7 @@ class AddEditViewController: UIViewController {
     
     
     // MARK: - Properties
-    var pickerData: [String] = [String]()
+   // var pickerData: [String] = [String]()
     var pillModelController = PillModelController()
     var pill: Pill?
     
@@ -33,7 +33,7 @@ class AddEditViewController: UIViewController {
         self.frequencyPickerView.delegate = self
         self.frequencyPickerView.dataSource = self
         updateViews()
-        pickerData = ["twice daily", "daily", "weeky", "monthly"]
+     //  pickerData = ["twice daily", "daily", "weeky", "monthly"]
        
     }
     
@@ -110,11 +110,11 @@ extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        pickerData.count
+        Frequency.allCases.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        pickerData[row]
+        Frequency.allCases[row].rawValue
     }
     
 }

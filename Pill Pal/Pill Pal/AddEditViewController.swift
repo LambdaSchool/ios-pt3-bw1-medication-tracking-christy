@@ -17,7 +17,7 @@ class AddEditViewController: UIViewController {
     @IBOutlet weak var numberOfPillsTextField: UITextField!
     @IBOutlet weak var dosageTextField: UITextField!
     @IBOutlet weak var dosageTypeTextField: UITextField!
-    @IBOutlet weak var frequencyPickerView: FrequencyPickerView!
+    @IBOutlet weak var frequencyPickerView: UIPickerView!
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
     
     
@@ -74,19 +74,22 @@ class AddEditViewController: UIViewController {
             
         
     }
-    
+    // FIXME: Update Views does not correctly update the picker view to display the current option.
     func updateViews() {
         if let pill = pill {
         nameTextField.text = pill.name
         numberOfPillsTextField.text = String(pill.numberOfPills)
         dosageTypeTextField.text = pill.dosageType
         isPrescriptionSwitch.isOn = pill.isPrescription
-          //  let frequency = Frequency.frequencies[row]
-         //   frequencyPickerView.selectRow(pill.frequency , inComponent: <#T##Int#>, animated: false)
+            
+          //  let frequencyRow = pill.frequency.frequencies[IndexPath]
+        //  let frequencyType = Frequency.frequencies[frequencyRow]
+            
+         //  frequencyPickerView.selectRow(frequencyRow, inComponent: 0, animated: false)
             
         if pill.dosage != nil {
             let dosageString = String(pill.dosage!)
-            dosageTypeTextField.text = dosageString
+            dosageTextField.text = dosageString
         }
             
     }

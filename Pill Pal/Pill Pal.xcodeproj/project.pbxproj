@@ -20,6 +20,7 @@
 		BA5B339423574B23005882AC /* PillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339323574B23005882AC /* PillsTableViewCell.swift */; };
 		BA5B339623574B63005882AC /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339523574B63005882AC /* Pill.swift */; };
 		BA5B339823574BC3005882AC /* PillModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B339723574BC3005882AC /* PillModelController.swift */; };
+		BAB9DB3E2364DCA900FC0426 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB9DB3D2364DCA900FC0426 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BA5B339323574B23005882AC /* PillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsTableViewCell.swift; sourceTree = "<group>"; };
 		BA5B339523574B63005882AC /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
 		BA5B339723574BC3005882AC /* PillModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillModelController.swift; sourceTree = "<group>"; };
+		BAB9DB3D2364DCA900FC0426 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				BA5B339523574B63005882AC /* Pill.swift */,
 				BA5B339723574BC3005882AC /* PillModelController.swift */,
 				BA5B339323574B23005882AC /* PillsTableViewCell.swift */,
+				BAB9DB3D2364DCA900FC0426 /* Alert.swift */,
 			);
 			name = Details;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				BA5B3377235748B4005882AC /* SceneDelegate.swift in Sources */,
 				BA5B339623574B63005882AC /* Pill.swift in Sources */,
 				BA5B338923574A70005882AC /* MenuViewController.swift in Sources */,
+				BAB9DB3E2364DCA900FC0426 /* Alert.swift in Sources */,
 				BA5B338C23574A9B005882AC /* InstructionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

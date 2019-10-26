@@ -62,6 +62,7 @@ class AddEditViewController: UIViewController {
                 return
             }
         }
+        
         let pillNumber = UInt(numberOfPillsTextField.text ?? "1")!
         let dosageNumber = UInt(dosageTextField.text ?? "0")
         let frequencyRow = frequencyPickerView.selectedRow(inComponent: 0)
@@ -70,7 +71,6 @@ class AddEditViewController: UIViewController {
         pillModelController.updatePill(for: pill!, newName: nameTextField.text, newQuantity: pillNumber, newDosage: dosageNumber, newDosageType: dosageTypeTextField.text, isPrescription: isPrescriptionSwitch.isOn, newFrequency: frequencyType)
         
         navigationController?.popToRootViewController(animated: true)
-        
         
     }
     // FIXME: Update Views does not correctly update the picker view to display the current option.

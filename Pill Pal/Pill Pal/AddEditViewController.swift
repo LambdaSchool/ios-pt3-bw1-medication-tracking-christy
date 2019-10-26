@@ -52,9 +52,11 @@ class AddEditViewController: UIViewController {
                 
                 let pillNumber = UInt(numberOfPillsTextField.text ?? "1")!
                 let dosageNumber = UInt(dosageTextField.text ?? "0")
-               let frequencyType = Frequency(rawValue: frequencyPickerView.textInputContextIdentifier ?? "daily")
+                let frequencyRow = frequencyPickerView.selectedRow(inComponent: 0)
+                let frequencyType = Frequency.frequencies[frequencyRow]
                 
-                pillModelController.create(pill: Pill(name: nameTextField.text!, isPrescription: isPrescriptionSwitch.isOn, numberOfPills: pillNumber, dosage: dosageNumber, dosageType: dosageTypeTextField.text, frequency: frequencyType!))
+                
+                pillModelController.create(pill: Pill(name: nameTextField.text!, isPrescription: isPrescriptionSwitch.isOn, numberOfPills: pillNumber, dosage: dosageNumber, dosageType: dosageTypeTextField.text, frequency: frequencyType))
                 
                 navigationController?.popToRootViewController(animated: true)
                 
@@ -63,9 +65,10 @@ class AddEditViewController: UIViewController {
         }
             let pillNumber = UInt(numberOfPillsTextField.text ?? "1")!
             let dosageNumber = UInt(dosageTextField.text ?? "0")
-            let frequencyType = Frequency(rawValue: frequencyPickerView.textInputContextIdentifier ?? "daily")
+            let frequencyRow = frequencyPickerView.selectedRow(inComponent: 0)
+            let frequencyType = Frequency.frequencies[frequencyRow]
             
-            pillModelController.updatePill(for: pill!, newName: nameTextField.text, newQuantity: pillNumber, newDosage: dosageNumber, newDosageType: dosageTypeTextField.text, isPrescription: isPrescriptionSwitch.isOn, newFrequency: frequencyType!)
+            pillModelController.updatePill(for: pill!, newName: nameTextField.text, newQuantity: pillNumber, newDosage: dosageNumber, newDosageType: dosageTypeTextField.text, isPrescription: isPrescriptionSwitch.isOn, newFrequency: frequencyType)
             
             navigationController?.popToRootViewController(animated: true)
             

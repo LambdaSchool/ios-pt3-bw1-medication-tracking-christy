@@ -16,6 +16,7 @@ struct Pill: Codable, Equatable {
     var frequency: Frequency
 }
 
+
 enum Frequency: String, Codable, CaseIterable {
     case twiceDaily = "Twice Daily"
     case daily = "Daily"
@@ -26,6 +27,7 @@ enum Frequency: String, Codable, CaseIterable {
     return [.twiceDaily, .daily, .weekly, .monthly]
     }
     
+
 }
 
 

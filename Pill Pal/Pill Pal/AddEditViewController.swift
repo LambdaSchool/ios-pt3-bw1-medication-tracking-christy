@@ -22,9 +22,6 @@ class AddEditViewController: UIViewController {
     
     
     // MARK: - Properties
-
-   // var pickerData: [String] = [String]()
-
     var pillModelController = PillModelController()
     var pill: Pill?
     

@@ -33,6 +33,10 @@ class AddEditViewController: UIViewController {
         
         self.frequencyPickerView.delegate = self
         self.frequencyPickerView.dataSource = self
+        self.nameTextField.delegate = self
+        self.numberOfPillsTextField.delegate = self
+        self.dosageTextField.delegate = self
+        self.dosageTypeTextField.delegate = self
 
         updateViews()
     }
@@ -108,3 +112,20 @@ extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         Frequency.allCases[row].rawValue
     }
 }
+
+extension AddEditViewController: UITextFieldDelegate {
+    // Auto switch text fields
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          let nextTag = textField.tag + 1
+
+          if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+              nextResponder.becomeFirstResponder()
+          } else {
+              textField.resignFirstResponder()
+          }
+
+          return true
+      }
+    
+}
+

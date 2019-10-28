@@ -11,6 +11,7 @@ import UIKit
 class PillsTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var dosageLabel: UILabel!
@@ -19,6 +20,7 @@ class PillsTableViewCell: UITableViewCell {
     @IBOutlet weak var nextPillAtLabel: UILabel!
     
     // MARK: - Properties
+    
     var pill: Pill? {
         didSet {
             updateViews()
@@ -37,20 +39,12 @@ class PillsTableViewCell: UITableViewCell {
             dosageLabel.text = dosageString
         }
         
-        
         // Assign pill values to labels
         nameLabel.text = pill.name
         quantityLabel.text = quantityString
         
         dosageTypeLabel.text = pill.dosageType
         frequencyLabel.text = pill.frequency.rawValue
-        // nextPillAtLabel.text =  // Need to configure timers before I can complete this
+        // nextPillAtLabel.text =  // Need to configure before I can complete this
     }
-/*
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-*/
 }

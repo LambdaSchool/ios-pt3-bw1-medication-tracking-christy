@@ -22,10 +22,12 @@ class AddEditViewController: UIViewController {
     
     
     // MARK: - Properties
+    
     var pillModelController = PillModelController()
     var pill: Pill?
     
     // MARK: - View
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +35,6 @@ class AddEditViewController: UIViewController {
         self.frequencyPickerView.dataSource = self
 
         updateViews()
-       
     }
     
     // MARK: - Actions
@@ -72,6 +73,7 @@ class AddEditViewController: UIViewController {
         
         navigationController?.popToRootViewController(animated: true)
     }
+// MARK: - Methods
     // FIXME: Update Views does not correctly update the picker view to display the current option.
     func updateViews() {
         if let pill = pill {
@@ -82,7 +84,6 @@ class AddEditViewController: UIViewController {
             
             //  let frequencyRow = pill.frequency.frequencies[IndexPath]
             //  let frequencyType = Frequency.frequencies[frequencyRow]
-            
             //  frequencyPickerView.selectRow(frequencyRow, inComponent: 0, animated: false)
             
             if pill.dosage != nil {
@@ -93,18 +94,6 @@ class AddEditViewController: UIViewController {
     }
 }
   
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
-
 // MARK: - Picker View Delegate and Data Source
 extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -118,5 +107,4 @@ extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         Frequency.allCases[row].rawValue
     }
-    
 }

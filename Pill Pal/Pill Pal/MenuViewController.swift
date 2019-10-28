@@ -16,8 +16,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var viewPillsButton: UIButton!
     @IBOutlet weak var nextPillButton: UIButton!
     
-    
-    
+// MARK: - View
     override func viewDidLoad() {
         super.viewDidLoad()
         instructionsButton.clipsToBounds = true
@@ -36,7 +35,8 @@ class MenuViewController: UIViewController {
         viewPillsButton.layer.cornerRadius = viewPillsButton.bounds.height/2.0
         nextPillButton.layer.cornerRadius = nextPillButton.bounds.height/2.0
     }
-    
+
+    // MARK: - Notification buttons for demo
     @IBAction func registerForNotifications(_ sender: UIBarButtonItem) {
         let center = UNUserNotificationCenter.current()
 
@@ -54,9 +54,10 @@ class MenuViewController: UIViewController {
 
         let content = UNMutableNotificationContent()
         content.title = "Time to take your pills"
-        // Configure THESE to include list of pills that should be taken today.
+        // Configure to include list of pills that should be taken today.
         content.body = "You need to take 1 Prescription and 2 Vitamin pills"
         content.categoryIdentifier = "morningPills"
+        
         // Not sure what this does yet.
         content.userInfo = ["customData": "fizzbuzz"]
         content.sound = UNNotificationSound.default
@@ -65,6 +66,7 @@ class MenuViewController: UIViewController {
         var dateComponents = DateComponents()
         dateComponents.hour = 09
         dateComponents.minute = 00
+        
         // Actual calendar trigger
         // let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
@@ -73,16 +75,5 @@ class MenuViewController: UIViewController {
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request)
-        }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
 }

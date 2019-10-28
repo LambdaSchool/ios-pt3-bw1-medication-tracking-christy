@@ -26,8 +26,6 @@ enum Frequency: String, Codable, CaseIterable {
     static var frequencies: [Frequency] {
         return [.twiceDaily, .daily, .weekly, .monthly]
     }
-    
-
 }
 
 

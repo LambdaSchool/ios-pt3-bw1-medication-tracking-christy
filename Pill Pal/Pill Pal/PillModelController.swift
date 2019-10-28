@@ -5,15 +5,20 @@
 //  Created by Christy Hicks on 10/16/19.
 //  Copyright © 2019 Knight Night. All rights reserved.
 //
+
+// Demo pill values
 let demoPill: Pill = Pill(name: "Prescription", isPrescription: true, numberOfPills: 1, dosage: 100, dosageType: "mg", frequency: .daily)
 let demoVitamin: Pill = Pill(name: "Vitamin", isPrescription: false, numberOfPills: 2, dosage: 100, dosageType: "mg", frequency: .daily)
 
 import Foundation
 class PillModelController {
-    
+
+// MARK: - Initialization
     init () {
         loadFromPersistentStore()
     }
+
+// MARK: - Properties
     
     // Set up an array to store prescriptions in.
     private var pills: [Pill] = [demoPill, demoVitamin]
@@ -34,7 +39,7 @@ class PillModelController {
             .sorted { $0.name < $1.name }
         return filter
     }
-     // FIXME: - Correct plist name
+    
      // Create location for saving data
      private var pillListURL: URL? {
          let fileManager = FileManager.default

@@ -115,7 +115,7 @@ class PillListTableViewController: UITableViewController {
             
         case "printPillSegue":
             guard let vc = segue.destination as? PrintViewController else { return }
-            print("Still need to configure the Print VC")
+            print("Still need to configure \(vc)")
             
         default:
             fatalError("Could not find segue")

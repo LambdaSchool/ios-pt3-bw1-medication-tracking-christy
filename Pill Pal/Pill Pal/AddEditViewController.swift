@@ -17,12 +17,14 @@ class AddEditViewController: UIViewController {
     @IBOutlet weak var numberOfPillsTextField: UITextField!
     @IBOutlet weak var dosageTextField: UITextField!
     @IBOutlet weak var dosageTypeTextField: UITextField!
-    @IBOutlet weak var frequencyPickerView: FrequencyPickerView!
+    @IBOutlet weak var frequencyPickerView: UIPickerView!
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
     
     
     // MARK: - Properties
-    var pickerData: [String] = [String]()
+
+   // var pickerData: [String] = [String]()
+
     var pillModelController = PillModelController()
     var pill: Pill?
     
@@ -32,15 +34,71 @@ class AddEditViewController: UIViewController {
         
         self.frequencyPickerView.delegate = self
         self.frequencyPickerView.dataSource = self
-        
-        pickerData = ["twice daily", "daily", "weeky", "monthly"]
+
+        updateViews()
+     //  pickerData = ["twice daily", "daily", "weeky", "monthly"]
+
        
     }
     
     // MARK: - Actions
     @IBAction func isPrescriptionToggled(_ sender: UISwitch) {
+        
     }
+    
     @IBAction func saveAction(_ sender: UIBarButtonItem) {
+        guard pill != nil else {
+            if nameTextField.text == "" || numberOfPillsTextField.text == "" {
+                navigationController?.popToRootViewController(animated: true)
+                return
+            
+            } else {
+                
+                let pillNumber = UInt(numberOfPillsTextField.text ?? "1")!
+                let dosageNumber = UInt(dosageTextField.text ?? "0")
+                let frequencyRow = frequencyPickerView.selectedRow(inComponent: 0)
+                let frequencyType = Frequency.frequencies[frequencyRow]
+                
+                
+                pillModelController.create(pill: Pill(name: nameTextField.text!, isPrescription: isPrescriptionSwitch.isOn, numberOfPills: pillNumber, dosage: dosageNumber, dosageType: dosageTypeTextField.text, frequency: frequencyType))
+                
+                navigationController?.popToRootViewController(animated: true)
+                
+                return
+            }
+        }
+            let pillNumber = UInt(numberOfPillsTextField.text ?? "1")!
+            let dosageNumber = UInt(dosageTextField.text ?? "0")
+            let frequencyRow = frequencyPickerView.selectedRow(inComponent: 0)
+            let frequencyType = Frequency.frequencies[frequencyRow]
+            
+            pillModelController.updatePill(for: pill!, newName: nameTextField.text, newQuantity: pillNumber, newDosage: dosageNumber, newDosageType: dosageTypeTextField.text, isPrescription: isPrescriptionSwitch.isOn, newFrequency: frequencyType)
+            
+            navigationController?.popToRootViewController(animated: true)
+            
+        
+    }
+    // FIXME: Update Views does not correctly update the picker view to display the current option.
+    func updateViews() {
+        if let pill = pill {
+        nameTextField.text = pill.name
+        numberOfPillsTextField.text = String(pill.numberOfPills)
+        dosageTypeTextField.text = pill.dosageType
+        isPrescriptionSwitch.isOn = pill.isPrescription
+            
+          //  let frequencyRow = pill.frequency.frequencies[IndexPath]
+        //  let frequencyType = Frequency.frequencies[frequencyRow]
+            
+         //  frequencyPickerView.selectRow(frequencyRow, inComponent: 0, animated: false)
+            
+        if pill.dosage != nil {
+            let dosageString = String(pill.dosage!)
+            dosageTextField.text = dosageString
+        }
+            
+    }
+    }
+    
     }
   
     /*
@@ -53,7 +111,7 @@ class AddEditViewController: UIViewController {
     }
     */
 
-}
+
 
 // MARK: - Picker View Delegate and Data Source
 extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -62,11 +120,11 @@ extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        pickerData.count
+        Frequency.allCases.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        pickerData[row]
+        Frequency.allCases[row].rawValue
     }
     
 }

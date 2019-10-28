@@ -5,7 +5,8 @@
 //  Created by Christy Hicks on 10/16/19.
 //  Copyright © 2019 Knight Night. All rights reserved.
 //
-let demoPill: Pill = Pill(name: "Health Improver", isPrescription: true, numberOfPills: 1, dosage: 100, dosageType: "mg", frequency: .daily)
+let demoPill: Pill = Pill(name: "Prescription", isPrescription: true, numberOfPills: 1, dosage: 100, dosageType: "mg", frequency: .daily)
+let demoVitamin: Pill = Pill(name: "Vitamin", isPrescription: false, numberOfPills: 2, dosage: 100, dosageType: "mg", frequency: .daily)
 
 import Foundation
 class PillModelController {
@@ -15,7 +16,7 @@ class PillModelController {
     }
     
     // Set up an array to store prescriptions in.
-    private var pills: [Pill] = [demoPill]
+    private var pills: [Pill] = [demoPill, demoVitamin]
     
     // Set up an alphabetical array of all the prescription pills.
     // FIXME: Perhaps change to be sorted by frequency?

@@ -71,7 +71,6 @@ class AddEditViewController: UIViewController {
         pillModelController.updatePill(for: pill!, newName: nameTextField.text, newQuantity: pillNumber, newDosage: dosageNumber, newDosageType: dosageTypeTextField.text, isPrescription: isPrescriptionSwitch.isOn, newFrequency: frequencyType)
         
         navigationController?.popToRootViewController(animated: true)
-        
     }
     // FIXME: Update Views does not correctly update the picker view to display the current option.
     func updateViews() {
@@ -90,10 +89,8 @@ class AddEditViewController: UIViewController {
                 let dosageString = String(pill.dosage!)
                 dosageTextField.text = dosageString
             }
-            
         }
     }
-    
 }
   
     /*
